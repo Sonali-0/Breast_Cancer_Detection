@@ -102,7 +102,7 @@ const UploadForm = ({ setResult }) => {
     try {
       // ✅ Use your deployed backend URL directly
       const res = await axios.post(
-        "http://127.0.0.1:8000/api/predict/",
+        "https://breast-cancer-detection-1-3i4b.onrender.com/api/predict/",
         formData,
         {
           headers: { "Content-Type": "application/json" },
