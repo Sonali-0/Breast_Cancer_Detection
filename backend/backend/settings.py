@@ -25,7 +25,8 @@ SECRET_KEY = "django-insecure-zfoy#=w^xs&w9)6^r)e9+mmujl#))f7h($mo1azy!jyre)nch(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
 
 
 # Application definition
@@ -130,4 +131,8 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-CORS_ALLOW_ALL_ORIGINS = True  # Allow React frontend
+INSTALLED_APPS += ['corsheaders']
+
+MIDDLEWARE.insert(0, 'corsheaders.middleware.CorsMiddleware')
+
+CORS_ALLOW_ALL_ORIGINS = True
