@@ -30,7 +30,7 @@ const UploadForm = ({ setResult }) => {
     }
 
     try {
-      const res = await axios.post('http://localhost:8000/api/predict/', formData);
+      const res = await axios.post('https://breast-cancer-detection-1-3i4b.onrender.com/api/predict/', formData);
       setResult(res.data);
     } catch (err) {
       console.error(err);
