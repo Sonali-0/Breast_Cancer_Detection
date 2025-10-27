@@ -27,6 +27,7 @@ const Header = () => (
   <header style={headerStyle}>
     <h1 style={titleStyle}>Breast Cancer Detection</h1>
     <p style={subtitleStyle}>Predict the chance of recurrence using patient data</p>
+    <p style={subtitleStyle}>Submitted By - Navya ,Sandhya ,Divyanshu, Arpit and Yatharth</p>
   </header>
 );
 
