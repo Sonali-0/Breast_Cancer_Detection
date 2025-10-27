@@ -131,8 +131,5 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-INSTALLED_APPS += ['corsheaders']
-
-MIDDLEWARE.insert(0, 'corsheaders.middleware.CorsMiddleware')
 
 CORS_ALLOW_ALL_ORIGINS = True
