@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import PredictView  # Removed HomeView
+from .views import PredictCancerView
 
 urlpatterns = [
-    path('predict/', PredictView.as_view(), name='predict'),
+    path('predict/', PredictCancerView.as_view(), name='predict'),
 ]
