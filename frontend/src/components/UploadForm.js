@@ -54,34 +54,25 @@ const UploadForm = ({ setResult }) => {
     <form onSubmit={handleSubmit} style={{ maxWidth: 700, margin: "20px auto", padding: 10 }}>
       <h2>Patient Information</h2>
 
-      <div style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(200px,1fr))",
-        gap: 12
-      }}>
-        {Object.keys(formData).map((key) => (
-          <input
-            key={key}
-            name={key}
-            value={formData[key]}
-            onChange={handleChange}
-            placeholder={key.replace("_", " ")}
-            required
-            style={{ padding: 10, borderRadius: 5, border: "1px solid #ccc" }}
-          />
-        ))}
-      </div>
+      <div className="form-grid">
 
-      <button type="submit" style={{
-        marginTop: 20,
-        padding: "10px 20px",
-        borderRadius: 5,
-        border: "none",
-        backgroundColor: "#3b82f6",
-        color: "white",
-        fontWeight: "bold",
-        cursor: "pointer"
-      }}>
+  {Object.keys(formData).map((key, index) => (
+    
+    <div className="form-field" key={key}>
+      <label>{key.replace("_", " ")}:</label>
+      <input
+        name={key}
+        value={formData[key]}
+        onChange={handleChange}
+        placeholder={`Enter ${key.replace("_", " ")}`}
+        required
+      />
+    </div>
+  ))}
+
+</div>
+
+      <button type="submit">
         Predict
       </button>
     </form>

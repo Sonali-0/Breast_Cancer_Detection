@@ -1,46 +1,205 @@
-body {
-  background: #f3f4f6;
-  font-family: Arial;
+/* body {
+  margin: 0;
+  padding: 0;
+  background-color: #f3f4f6;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.form-container {
-  max-width: 800px;
-  margin: 30px auto;
-  padding: 20px;
-  background: white;
+
+form {
+  max-width: 720px;
+  height: 480px;
+  margin: 40px auto;
+  background: #dddef2;
   border-radius: 12px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+  padding: 25px;
 }
 
-.form-grid {
+
+form h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #1f2937;
+}
+
+
+form > div {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 12px;
+  gap: 20px;
 }
 
-.form-input {
-  padding: 10px;
-}
 
-.form-button {
-  margin-top: 20px;
+input {
   padding: 12px;
-  width: 100%;
-  background: #2563eb;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+}
+
+input:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+
+button {
+  display: block;
+  margin: 30px auto 0;
+  padding: 12px 45px;
+  background-color: #2563eb;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
 }
+
+button:hover {
+  background-color: #7592e4;
+}
+
 
 .result-container {
+  max-width: 720px;
+  margin: 25px auto;
+  padding: 18px;
+  background: hsl(186, 42%, 82%);
+  border-radius: 12px;
   text-align: center;
-  margin: 20px;
-  padding: 15px;
-  background: #ecfeff;
-  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
+.result-container p {
+  margin: 8px 0;
+  color: #0f172a;
+  font-size: 15px;
+}
+
+
 @media (max-width: 768px) {
+
+  form {
+    margin: 15px;
+    padding: 18px;
+  }
+
+  form > div {
+    grid-template-columns: 1fr;
+  }
+
+  button {
+    width: 100%;
+    padding: 14px;
+  }
+}  */
+/* ===== Global ===== */
+body {
+  margin: 0;
+  padding: 0;
+  background:white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== Form Card ===== */
+form {
+  max-width: 760px;
+  margin: 30px auto;
+  background: #e6f7fb;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== Section Title ===== */
+form h2 {
+  margin-bottom: 20px;
+  color:blue;
+  font-size: 18px;
+}
+
+/* ===== GRID (4 LEFT : 3 RIGHT) ===== */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 22px;
+  row-gap: 16px;
+}
+
+
+/* ===== Field Wrapper ===== */
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Label (outside input like image) ===== */
+.form-field label {
+  font-size: 13px;
+  color: #374151;
+  margin-bottom: 6px;
+  text-transform: capitalize;
+}
+
+/* ===== Input ===== */
+.form-field input {
+  padding: 10px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+}
+
+.form-field input:focus {
+  outline: none;
+  border-color: #4f6fdc;
+  background: #ffffff;
+}
+
+/* ===== Predict Button ===== */
+button {
+  display: block;
+  margin: 30px auto 0;
+  padding: 10px 30px;
+  background: #4f6fdc;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #3b5fc9;
+}
+.result-container {
+  max-width: 720px;
+  margin: 30px auto;         /* centers horizontally with vertical spacing */
+  padding: 20px 25px;
+  background-color: #e6f7fb; /* soft light blue background */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;        /* center text inside */
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1f2937;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.result-container p {
+  margin: 8px 0;
+}
+
+
+/* ===== Mobile ===== */
+@media (max-width: 768px) {
+
   .form-grid {
     grid-template-columns: 1fr;
+  }
+
+  button {
+    width: 100%;
   }
 }
