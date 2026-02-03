@@ -41,8 +41,7 @@ const UploadForm = ({ setResult }) => {
 
     try {
       const res = await axios.post(API_URL, payload, {
-        headers: { "Content-Type": "application/json" },
-        withCredentials: true
+        headers: { "Content-Type": "application/json" } // no withCredentials
       });
       setResult(res.data);
     } catch (err) {

@@ -29,7 +29,7 @@ INSTALLED_APPS = [
 
 # ✅ Middleware (order matters)
 MIDDLEWARE = [
-    "corsheaders.middleware.CorsMiddleware",  # MUST be first
+     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -74,15 +74,33 @@ STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-# ✅ CORS settings
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  # for local dev
+    "https://breast-cancer-detection-rosy.vercel.app",  # deployed frontend
+]
+
+
+CORS_ALLOW_CREDENTIALS = False
+CORS_ALLOW_HEADERS = [
+    "accept",
+    "accept-encoding",
+    "authorization",
+    "content-type",   # <-- ADD THIS
+    "origin",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with",
+]
+
+# CORS settings
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # local React dev
     "https://breast-cancer-detection-rosy.vercel.app",  # production React
 ]
 
-CORS_ALLOW_CREDENTIALS = True
-CORS_ALLOW_HEADERS = ["*"]
-CORS_ALLOW_METHODS = ["*"]
+# Allow all HTTP methods
+CORS_ALLOW_METHODS = ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
+
 
 # ✅ Language & Time
 LANGUAGE_CODE = "en-us"
