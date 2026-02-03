@@ -23,10 +23,10 @@ class PredictCancerView(APIView):
         if d['irradiation'].lower() == 'yes': risk += 1
 
         if risk >= 5:
-            prediction = "Malignant"
+            prediction = "The chance of cancer recurrence is high 0.90"
             confidence = 0.90
         else:
-            prediction = "Benign"
+            prediction = "The chance of cancer recurrence is low 0.85"
             confidence = 0.85
 
         Patient.objects.create(
